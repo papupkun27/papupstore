@@ -1,177 +1,217 @@
-/* --- RESET & DASAR --- */
+/* Reset dasar untuk konsistensi */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Memastikan padding tidak merusak ukuran elemen */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #f4f4f4; /* Warna abu-abu sangat muda agar mata tidak cepat lelah */
-    color: #333;
+    font-family: 'Arial', sans-serif; /* Font sederhana, bisa diganti dengan font anime jika ada */
     line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd23f); /* Gradien oranye-kuning seperti tema Naruto */
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
-/* --- NAVIGASI (Gaya Futuristik) --- */
+/* Header dan Navigasi */
 header {
-    background-color: #d00000; /* Merah khas Ultraman */
-    color: white;
-    padding: 1rem 5%;
-    position: sticky; /* Navigasi tetap di atas saat di-scroll */
+    position: fixed;
     top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Hitam transparan seperti pakaian ninja */
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav {
     display: flex;
-    justify-content: space-between; /* Logo di kiri, menu di kanan */
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    letter-spacing: 2px;
+    color: #ffd23f; /* Kuning seperti mata Sharingan */
 }
 
 .logo span {
-    color: #00d4ff; /* Biru terang seperti Color Timer Ultraman */
+    color: #ff6b35; /* Oranye seperti jaket Naruto */
 }
 
-nav ul {
-    display: flex;
+ul {
     list-style: none;
+    display: flex;
 }
 
-nav ul li {
-    margin-left: 20px;
+ul li {
+    margin-left: 2rem;
 }
 
-nav ul li a {
-    color: white;
+ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s; /* Efek transisi halus saat hover */
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #00d4ff; /* Berubah jadi biru saat disentuh kursor */
+ul li a:hover {
+    color: #ffd23f; /* Hover kuning */
 }
 
-/* --- HERO SECTION --- */
+/* Bagian Hero */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 10%;
-    background: linear-gradient(135deg, #d00000 0%, #800000 100%); /* Gradasi merah gelap */
-    color: white;
-    min-height: 80vh;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    background: url('path/to/naruto-background.jpg') no-repeat center center/cover; /* Tambahkan gambar latar Naruto jika ada */
+    color: #fff;
+    text-align: left;
+}
+
+.hero-content {
+    max-width: 50%;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    font-size: 3rem;
+    margin: 1rem 0;
+    color: #ffd23f;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.hero-logo img {
-    width: 300px;
-    filter: drop-shadow(0 0 15px #00d4ff); /* Efek cahaya biru di sekitar logo */
-    animation: float 3s ease-in-out infinite; /* Animasi melayang */
-}
-
-/* Animasi Melayang */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .btn-hero {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: #00d4ff;
+    padding: 0.8rem 1.5rem;
+    background: #ff6b35;
     color: #fff;
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: 0.3s;
+    border-radius: 5px;
+    transition: background 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .btn-hero:hover {
-    background-color: #fff;
-    color: #d00000;
-    transform: scale(1.1);
+    background: #e55a2b;
 }
 
-/* --- CONTAINER UMUM --- */
-.container {
-    padding: 80px 10%;
-    text-align: center;
+.hero-logo img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #ffd23f;
+    box-shadow: 0 0 20px rgba(255, 210, 63, 0.5);
 }
 
-.bg-light {
-    background-color: #e5e5e5; /* Warna perak untuk bagian tertentu */
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+/* Bagian About */
+.about {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: -5rem; /* Overlap dengan hero */
     position: relative;
-    display: inline-block;
+    z-index: 10;
+    border-radius: 10px;
+    margin: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-h2::after {
-    content: '';
-    width: 60%;
-    height: 4px;
-    background: #d00000;
-    position: absolute;
-    bottom: -10px;
-    left: 20%;
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff6b35;
+    font-size: 2.5rem;
 }
 
-/* --- PROYEK GRID (Agar Sejajar) --- */
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+/* Bagian Proyek */
+.proyek {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #333, #555); /* Abu-abu gelap seperti bayangan */
+    color: #fff;
+}
+
+.proyek h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffd23f;
+    font-size: 2.5rem;
+}
+
 .proyek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif: minimal 300px per kartu */
-    gap: 25px; /* Jarak antar kartu */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .proyek-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden; /* Agar gambar tidak keluar dari border radius */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none;
-    color: #333;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .proyek-card:hover {
-    transform: translateY(-10px); /* Kartu naik sedikit saat hover */
-    box-shadow: 0 10px 25px rgba(208, 0, 0, 0.3); /* Shadow merah */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .proyek-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Gambar tetap proporsional meskipun dipotong */
+    object-fit: cover;
 }
 
 .proyek-info {
-    padding: 20px;
+    padding: 1rem;
 }
 
-/* --- MEDSOS LIST --- */
+.proyek-info h3 {
+    margin-bottom: 0.5rem;
+    color: #ffd23f;
+}
+
+.proyek-info p {
+    font-size: 0.9rem;
+}
+
+/* Bagian Medsos */
+.medsos {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+.medsos h2 {
+    margin-bottom: 2rem;
+    color: #ff6b35;
+    font-size: 2.5rem;
+}
+
 .medsos-list {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
@@ -181,42 +221,58 @@ h2::after {
     align-items: center;
     text-decoration: none;
     color: #333;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.medsos-item img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
+    transition: transform 0.3s;
 }
 
 .medsos-item:hover {
-    color: #d00000;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-/* --- FOOTER --- */
+.medsos-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.medsos-item span {
+    font-weight: bold;
+}
+
+/* Footer */
 footer {
-    background-color: #222;
-    color: white;
+    background: #333;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+    padding: 1rem;
+    margin-top: 2rem;
 }
 
-/* --- MEDIA QUERIES (Agar bagus di HP) --- */
+/* Responsivitas */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
         text-align: center;
     }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .hero-content {
+        max-width: 100%;
     }
-    
-    nav ul {
-        display: none; /* Kamu bisa kembangkan menu burger nantinya */
+    .hero-logo img {
+        width: 200px;
+        height: 200px;
+    }
+    nav {
+        flex-direction: column;
+    }
+    ul {
+        margin-top: 1rem;
+    }
+    ul li {
+        margin: 0 1rem;
+    }
+    .proyek-grid {
+        grid-template-columns: 1fr;
+    }
+    .medsos-list {
+        flex-direction: column;
     }
 }
